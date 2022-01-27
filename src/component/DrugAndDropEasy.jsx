@@ -14,6 +14,7 @@ export default function DrugAndDropEasy() {
 
     const [currentCard, setCurrentCard] = useState(null)
 
+    console.log('currentCard', currentCard)
 
     function dragStartHandler(e, card) { 
         console.log('drag', card)
@@ -36,6 +37,7 @@ export default function DrugAndDropEasy() {
     }
 
     function dropHandler(e, card) {
+        console.log('drop', card)
         e.preventDefault()
         setCardList(cardList.map(c => { 
             if (c.id === card.id) { 

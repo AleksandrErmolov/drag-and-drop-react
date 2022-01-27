@@ -11,14 +11,6 @@ h1 {
   margin-top: 20px;
 }
 
-.menu {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  list-style: none;
-  width: 800px;
-  margin-top: 30px;
-}
 
 .app {
   align-items: center;
@@ -29,15 +21,23 @@ h1 {
   align-items: center;
   display: flex;
   flex-direction: column;
- 
 }
-
 
 
 .main_menu {
   margin: 0 auto;
 }
 
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  width: 800px;
+  margin-top: 30px;
+  text-decoration: none;
+}
 
 .cards {
   display: flex;
@@ -57,4 +57,14 @@ h1 {
   align-items: center;
   margin: 20px;
   cursor: grab;
+}
+
+.red {
+  color: red;
+  text-decoration: none;
+}
+
+.blue {
+  color: blue;
+  text-decoration: none;
 }
