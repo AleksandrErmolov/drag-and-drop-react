@@ -3,6 +3,7 @@ import './App.css';
 import DrugAndDropEasy from './component/DrugAndDropEasy';
 import Main from './component/Main';
 import MainPage from './component/MainPage';
+import Trello from './component/Trello';
 
 function App() {
 
@@ -14,7 +15,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='/easy' element={<DrugAndDropEasy />} />
-        <Route path='/trello' element={<h1>Trello</h1>} />
+        <Route path='/trello' element={<Trello />} />
         <Route path='/file' element={<h1>File</h1>} />
 
       </Routes>
