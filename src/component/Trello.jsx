@@ -39,8 +39,9 @@ export default function Trello() {
 
 
 
-    function dropHandler(e, item, board) {
+    function dropHandler(e, board, item) {
         e.preventDefault()
+        console.log(board)
         const currentIndex = currentBoard.items.indexOf(currentItem)
         currentBoard.items.splice(currentIndex, 1)
         const dropIndex = board.items.indexOf(item)
@@ -70,7 +71,7 @@ export default function Trello() {
                         <div
                             key={i}
                             className='item'
-                            draggable
+                            draggable={true}
                             onDragStart={(e) => dragStartHandler(e, board, item)}
                             onDragLeave={(e) => dragLeaveHandler(e)}
                             onDragEnd={(e) => dragEndHandler(e)}
