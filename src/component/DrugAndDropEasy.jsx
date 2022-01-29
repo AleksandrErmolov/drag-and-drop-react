@@ -14,7 +14,6 @@ export default function DrugAndDropEasy() {
 
     const [currentCard, setCurrentCard] = useState(null)
 
-    console.log('currentCard', currentCard)
 
     function dragStartHandler(e, card) { 
         console.log('drag', card)

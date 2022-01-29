@@ -14,9 +14,9 @@ export default function Menu() {
     return (
         <div className='main_menu'>
             <ul className='menu'>
-                {menu.map(el =>
+                {menu.map((el, i) =>
 
-                    <li><NavLink className={({ isActive }) => isActive ? "red" : "blue"} to={el.to}>{el.title}</NavLink></li>
+                    <li key={i}><NavLink className={({ isActive }) => isActive ? "red" : "blue"} to={el.to}>{el.title}</NavLink></li>
 
                 )}
             </ul>
