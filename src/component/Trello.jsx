@@ -40,12 +40,12 @@ export default function Trello() {
 
 
     function dropHandler(e, board, item) {
+        e.stopPropagation()
         e.preventDefault()
-        console.log(board)
         const currentIndex = currentBoard.items.indexOf(currentItem)
         currentBoard.items.splice(currentIndex, 1)
         const dropIndex = board.items.indexOf(item)
-        board.items.splice(dropIndex+1, 0, currentItem)
+        board.items.splice(dropIndex + 1, 0, currentItem)
 
         setBoards(boards.map(b => {
             if (b.id === board.id) {
@@ -57,6 +57,26 @@ export default function Trello() {
             }
             return b
         }))
+        e.target.style.boxShadow = 'none'
+    }
+
+    const dropCardHandler = (e, board) => {
+        board.items.push(currentItem)
+        const currentIndex = currentBoard.items.indexOf(currentItem)
+        currentBoard.items.splice(currentIndex, 1)
+
+        setBoards(boards.map(b => {
+            if (b.id === board.id) {
+                return board
+            }
+
+            if (b.id === currentBoard.id) {
+                return currentBoard
+            }
+            return b
+        }))
+
+        e.target.style.boxShadow = 'none'
     }
 
 
@@ -65,7 +85,11 @@ export default function Trello() {
             {boards.map((board, i) =>
                 <div
                     key={i}
-                    className='board'>
+                    className='board'
+                    onDragOver={(e) => dragOverHandler(e)}
+                    onDrop={(e) => dropCardHandler(e, board)}
+                >
+
                     <div className='board__title'> {board.title} </div>
                     {board.items.map((item, i) =>
                         <div
