@@ -111,3 +111,21 @@ h1 {
   cursor: grab;
   background-color: #fcfcf9;
 }
+
+.drop-area {
+  margin: 0 auto;
+  margin-top: 20px;
+  width:  60vw;
+  height: 70vh;
+  border: 5px dashed black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.drop-file {
+
+  display: flex;
+  margin: 0 auto;
+}
